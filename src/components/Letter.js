@@ -14,7 +14,7 @@ class Letter extends React.Component {
       this.setState({
         'class' : newValue
       });
-      this.props.changeRedLettersValue(newValue);
+      this.props.changeRedLettersValue(newValue, this.props.indexOfLetterInString);
     }
 
     render() {

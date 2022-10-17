@@ -11,9 +11,8 @@ function App() {
     <div className="App">
       <div className='App-header'>
         <Logo />
-        <Title text={wording.histoire1.text} />
         <SousComponent text="Какого цвета яблоко ?" />
-        <Histoire image={wording.histoire1.image} text={wording.histoire1.text} />
+        <Histoire image={wording.histoire1.image} text={wording.histoire1.text} phase={"1"} />
       </div>
       
     </div>

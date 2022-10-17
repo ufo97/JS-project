@@ -1,7 +1,8 @@
 {
     "histoire1" : {
         "text" : "En 2178 un jeune homme se retrouve aspiré par une force inconnue qui le propulse en l’an 2022 après Jésus Christ. Livré à lui-même, il va devoir explorer les recoins de cet ère pour retrouver la sienne.",
-        "image" : "wallpaper_4.jpg"
+        "image" : "wallpaper_4.jpg",
+        "wordToGuess": "rue"
     },
     "histoire2" : "Où suis-je ? Pas chez moi c’est certain. Que dit ma montre GPS ? France, Charente-Maritime. Cela ressemble à une fortification en pleine mer. Voyons voir … je vais monter en haut de cette tour pour voir si je vois quelque ch… Oh qui êtes-vous ?",
     "histoire3" : "Une maison maintenant ? Ces pictogrammes et ce mobilier me sont familiers. Mais pas le temps pour faire du tourisme je dois au plus vite m’échapper de cet endroit avant qu’on me remarque.",

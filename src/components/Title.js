@@ -7,24 +7,31 @@ class Title extends React.Component {
       super(props);
 
       this.state = {
-        redLetters: this.props.text.length -  this.props.text.split(' ').length
+        redLetters: this.props.text.length -  this.props.text.split(' ').length,
+        stateOfLetters: this.props.text.split('').map(element => 'red'),
       }
     }
 
-    changeRedLettersValue(newValue) {
-      if (newValue == 'green') this.setState({redLetters: this.state.redLetters-1});
-      else if (newValue == 'red') this.setState({redLetters: this.state.redLetters+1});
+    changeRedLettersValue(newValue, index) {
+      let tmpStateOfLetters = [...this.state.stateOfLetters];
+      tmpStateOfLetters[index] = newValue;
+      this.setState({
+          stateOfLetters: tmpStateOfLetters
+        },
+        function() {
+          const concatenatedGreenLetters = this.props.text.split('').map((element, index) => this.state.stateOfLetters[index] == 'green' ? element : '').join('');
 
-      console.log("number of red letters : ", this.state.redLetters);
-
-      if (this.state.redLetters == 0) {
-          console.log("C'est bon !!");
-          window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-      }
+          console.log(concatenatedGreenLetters);
+    
+          if (concatenatedGreenLetters == this.props.wordToGuess) {
+            window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+          }
+        }
+      );
     }
 
     render() {
-      return this.props.text.split('').map(element => <Letter letter={element} class={'red'} changeRedLettersValue={this.changeRedLettersValue.bind(this)} />);
+      return this.props.text.split('').map((element, index) => <Letter letter={element} class={'red'} changeRedLettersValue={this.changeRedLettersValue.bind(this)} indexOfLetterInString={index} />);
     }
   }
 

@@ -50,3 +50,12 @@
   border: none;
   font-size: 1.5em;
 }
+
+.histoire-phase-1 {
+  background-image: url("../images/wallpaper_4.jpg");
+}
+
+.histoire-phase-1 div {
+  width: 50%;
+  margin: 45%;
+}
