@@ -1,22 +1,28 @@
 import React from 'react';
 import './assets/css/App.css';
-import SousComponent from './components/SousComponent';
-import Title from './components/Title';
-import Logo from './components/Logo';
-import Histoire from './components/Histoire';
-import wording from './wording.json';
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-    <div className="App">
-      <div className='App-header'>
-        <Logo />
-        <Title text={wording.histoire1.text} />
-        <SousComponent text="Какого цвета яблоко ?" />
-        <Histoire image={wording.histoire1.image} text={wording.histoire1.text} />
-      </div>
-      
-    </div>
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path='home' element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
